@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linked Lists, Visually — console.py + the board</title>
+<meta name="description" content="Write Python-style linked-list code on the left, watch nodes, wires, and pointers build themselves on the board, right down to a while loop traversal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">●⎯▸</span>
+      <span class="brand-name">Linked Lists, Visually</span>
+    </div>
+    <div class="controls">
+      <button class="btn btn-ghost" id="btn-example" title="Reload the starter program">↺ Example</button>
+      <button class="btn" id="btn-step" title="Execute the next statement">Step ▸</button>
+      <button class="btn btn-primary" id="btn-run" title="Run automatically">▶ Run</button>
+      <button class="btn btn-ghost" id="btn-reset" title="Rewind to the start">Restart</button>
+      <button class="btn btn-icon" id="btn-help" title="What the board understands" aria-label="Help">?</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+
+    <section class="editor-pane" id="editor-pane">
+      <div class="file-tab"><span class="file-dot"></span><span class="file-name">console.py</span></div>
+
+      <div class="editor-wrap">
+        <div class="line-numbers" id="line-numbers"></div>
+        <textarea id="code-input" class="code-input" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+      </div>
+
+      <div class="console-panel">
+        <div class="console-heading">OUTPUT</div>
+        <div class="console-log" id="console-log" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <div class="resizer" id="resizer"></div>
+
+    <section class="board-pane">
+      <div class="canvas-frame">
+        <div class="unassigned-tray" id="unassigned-tray">
+          <span class="tray-label">unassigned</span>
+        </div>
+        <div class="canvas" id="canvas">
+          <svg id="arrow-layer"></svg>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="popover" id="popover">
+  <h3>What the board understands</h3>
+  <ul>
+    <li><code>New = Node(5)</code> — creates a node</li>
+    <li><code>head = New</code> — plants a <code>head</code> flag (any name works — <code>curr</code>, <code>tail</code>, anything)</li>
+    <li><code>New.next = New2</code> or <code>New.next = None</code> — wires (or clears) a link</li>
+    <li><code>curr = curr.next</code> or <code>curr = curr.next.next</code> — hops a pointer forward</li>
+    <li><code>while curr is not None:</code> — loops until a pointer runs off the end</li>
+    <li><code>print(curr.data)</code> — logs to OUTPUT</li>
+    <li>The <code>class Node:</code> block up top is shown but never "run" — it's just there for reference.</li>
+    <li>Drag any <b>pointer flag</b> onto a different node, or a node's <b>wire tip</b> onto a new target, by hand.</li>
+  </ul>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
